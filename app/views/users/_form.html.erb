@@ -1,7 +1,6 @@
 <div class="container">
     
     <%= form_for @user do |f| %>
-
         <div class ="form-group">
             <%= f.label :Name %>
             <%= f.text_field :name, class: 'form-control' %>
@@ -13,8 +12,9 @@
         <div class="form-group">
             <%= f.label :Password %>
             <%= f.password_field :password, class: 'form-control' %>
+            <small id="passwordHelp" class="form-text text-muted">We need more than 6 characters.</small>
         </div>
-        <button type="submit" class="btn btn-primary w-100">Create New Account</button>
+        <button type="submit" class="btn btn-primary w-100"> Create New Account</button>
     <% end %>
 
 </div>
