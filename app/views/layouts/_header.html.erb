@@ -1,21 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to "E-learning(temporary)", home_path , class: "navbar-brand" %>
+  <%= link_to "E-learning(temporary",  root_path ,class: "navbar-brand" %>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-  <ul class="navbar-nav ml-auto">
-  <ul class="navbar-nav ml-auto">
-        <form class="form-inline">
-            <li class="form-group mb-2">
-                <label for="Email" class="sr-only">Email</label>
-                <input type="text" readonly class="form-control" id="Email" placeholder="email@example.com">
-            </li>
-
-            <li class="form-group mx-sm-3 mb-2">
-                <label for="inputPassword2" class="sr-only">Password</label>
-                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-            </li>
-            <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
-        </form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <%= link_to "Home", root_path ,class: "nav-item nav-link"%>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Sing UP", new_user_path, class: "nav-item nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Log In" %>
+        </li>
 
       </ul>
   </div>
