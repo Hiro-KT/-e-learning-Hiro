@@ -6,13 +6,18 @@
         <li class="nav-item">
             <%= link_to "Home", root_path ,class: "nav-item nav-link"%>
         </li>
-        <li class="nav-item">
-            <%= link_to "Sing UP", new_user_path, class: "nav-item nav-link" %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "Log In" ,new_session_path, class: "nav-item nav-link" %>
-        </li>
-
+        <% if logged_in? %>
+            <li class="nav-item">
+                <%= link_to "Log out", class: "nav-item nav-link" %>
+            </li>
+        <% else %>
+            <li class="nav-item">
+                <%= link_to "Sing UP", new_user_path, class: "nav-item nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Log In" ,new_session_path, class: "nav-item nav-link" %>
+            </li>
+        <% end %>
       </ul>
   </div>
 </nav>
