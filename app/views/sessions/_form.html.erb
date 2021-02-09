@@ -1,0 +1,16 @@
+<div class="container">
+
+    <%= form_for :session, url: sessions_path do |f| %>
+        <div class="form-group">
+            <%= f.label :Email %>
+            <%= f.email_field :email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+            <%= f.label :Password %>
+            <%= f.password_field :password, class: 'form-control' %>
+            <small id="passwordHelp" class="form-text text-muted">We need more than 6 characters.</small>
+        </div>
+        <button type="submit" class="btn btn-primary w-100"> Go to e-learning</button>
+    <% end %>
+
+</div>
