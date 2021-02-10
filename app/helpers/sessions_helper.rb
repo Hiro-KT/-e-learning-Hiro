@@ -1,5 +1,5 @@
 module SessionsHelper
-  
+
   def login(user)
     session[:user_id] = user.id
   end
@@ -16,4 +16,5 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
 end
