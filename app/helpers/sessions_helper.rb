@@ -1,6 +1,7 @@
 module SessionsHelper
+  
   def login(user)
-    session[:user_id] = user_id
+    session[:user_id] = user.id
   end
 
   def logged_in?
