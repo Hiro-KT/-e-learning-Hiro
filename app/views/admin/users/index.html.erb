@@ -1,0 +1,27 @@
+<h1 class="text-center">Administration Users</h1>
+<hr class="col-8">
+
+<div class="container">
+    <div class="row justify-content-around">
+        <% @users.each do |people| %>
+            <div class="card col-3 m-3">
+                <%= image_tag gravatar_for(people) ,class: "rounded-circle mt-3" %>
+                <%= link_to people.name, admin_user_path(people) ,class: "text-center m-3" %>
+                <% people.email %>
+                <div class="button-add">
+                    <%= button_to "Add",class: "btn btn-info" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>

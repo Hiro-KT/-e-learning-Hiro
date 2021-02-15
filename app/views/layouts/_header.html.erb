@@ -13,16 +13,18 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <%= link_to "Profile", user_path(current_user), class: "nav-item dropdown-item" %>
-                    <%= link_to "Edit account", edit_user_path(current_user), class: "nav-item dropdown-item" %>
+                    <%= link_to "Profile", admin_user_path(current_user), class: "nav-item dropdown-item" %>
+                    <%= link_to "Edit account", edit_admin_user_path(current_user), class: "nav-item dropdown-item" %>
                     <%= link_to "Log out", logout_path, method: :delete, class: "nav-item dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to "Administration" ,admin_users_path ,class: "nav-item dropdown-item"%>
                 </div>
             </li>
             <li class="nav-item">
                 <%= link_to "Lessons", root_path, class: "nav-item nav-link" %>
             </li>
             <li class="nav-item">
-                <%= link_to "Users", users_path, class: "nav-item nav-link" %>
+                <%= link_to "Users", admin_users_path, class: "nav-item nav-link" %>
             </li>
         <% else %>
             <li class="nav-item">
