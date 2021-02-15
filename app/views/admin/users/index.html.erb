@@ -7,9 +7,9 @@
             <div class="card col-3 m-3">
                 <%= image_tag gravatar_for(people) ,class: "rounded-circle mt-3" %>
                 <%= link_to people.name, admin_user_path(people) ,class: "text-center m-3" %>
-                <%= people.email %>
+                <p class="text-center"><%= people.email %></p>
                 <div class="button-add">
-                    <%= button_to "Add", "#" ,class: "btn btn-info" %>
+                    <%= button_to "Add", "#" ,class: "btn btn-info mb-2" %>
                 </div>
             </div>
         <% end %>
