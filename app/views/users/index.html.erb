@@ -1,0 +1,14 @@
+<h1 class="text-center">Users</h1>
+<hr class="col-8">
+
+<div class="container">
+    <div class="row justify-content-around">
+        <% @users.each do |people| %>
+            <div class="card col-3 m-3">
+                <%= image_tag gravatar_for(people) ,class: "rounded-circle mt-3" %>
+                <%= link_to people.name, user_path(people) ,class: "text-center m-3" %>
+            </div>
+        <% end %>
+    </div>
+</div>
+
