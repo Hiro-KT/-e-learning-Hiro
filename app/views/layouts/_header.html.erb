@@ -16,6 +16,8 @@
                     <%= link_to "Profile", user_path(current_user), class: "nav-item dropdown-item" %>
                     <%= link_to "Edit account", edit_user_path(current_user), class: "nav-item dropdown-item" %>
                     <%= link_to "Log out", logout_path, method: :delete, class: "nav-item dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to "Administration" ,admin_users_path ,class: "nav-item dropdown-item"%>
                 </div>
             </li>
             <li class="nav-item">
