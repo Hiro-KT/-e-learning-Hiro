@@ -4,11 +4,10 @@ Rails.application.routes.draw do
   resources :sessions
 
   namespace :admin do
+    resources :categories
     resources :users do
       member do
-          # Add route to add_admin here
           put "add_admin"
-          # Add route to remove_admin here
           put "remove_admin"
         end
     end

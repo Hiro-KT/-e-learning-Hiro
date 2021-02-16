@@ -1,0 +1,18 @@
+// Place all the styles related to the admin/categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table{
+  text-align: center;
+  margin: auto;
+  width: 800px;
+}
+
+table, td ,th{
+  border: 2px black solid;
+}
+
+.btn-new{
+  text-align:center;
+
+}
