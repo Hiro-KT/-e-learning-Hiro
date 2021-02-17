@@ -14,12 +14,15 @@
     </thead>
 
     <tbody>
+        <% @categories.each do |category| %>
         <tr>
-            <td></td>
-            <td></td>
+            <td><%= category.title %></td>
+            <td><%= category.description %></td>
             <td><%= link_to "Edit" ,"#" , class: "" %> / <%= link_to "Delete" ,"#" , class: "" %></td>
         </tr>
+        <% end %>
     </tbody>
 </table>
+
 
 
