@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         end
     end
   end
-  
-   delete '/logout', to: 'categories#destroy'
+
+   delete '/logout', to: 'sessions#destroy'
 
 end
