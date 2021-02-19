@@ -4,12 +4,15 @@
     <%= link_to "New Category" , new_admin_category_path , class: "btn  btn-info m-3" %>
 </div>
 
+
+
 <table class="mt-4">
     <thead>
         <tr>
             <th>Title</th>
             <th>Description</th>
             <th>Settings</th>
+            <th>Q&A</th>
         </tr>
     </thead>
 
@@ -20,7 +23,10 @@
             <td><%= category.description %></td>
             <td><%= link_to "Edit" , edit_admin_category_path(category) , class: "btn btn-info" %>
              / <%= link_to "Delete" , admin_category_path(category) , method: :delete ,class: "btn btn-danger" %></td>
+            <td><%= link_to "Show", admin_category_path(category) %></td>
         </tr>
         <% end %>
     </tbody>
 </table>
+
+

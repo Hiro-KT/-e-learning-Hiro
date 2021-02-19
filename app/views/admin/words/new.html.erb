@@ -1,0 +1,26 @@
+<h1 class="text-center m-3">New Words</h1>
+
+<div class="container">
+    <div class="row justify-centent-around">
+        <div class="col-6 m-auto">
+            <%= form_for [:admin, :category, @word] do |f| %>
+                <div class="form-group">
+                        <%= f.label :word %><br>
+                        <%= f.text_field :content , class: "form-control" %>
+                </div>
+                    <%= f.label :choices %>
+                    <%= f.fields_for :choices do |choice| %>
+                        <div class="form-group">
+                            <%= choice.text_field :content , class: "form-control" %>
+                            <%= choice.check_box :is_correct %>
+                            <%= choice.label :this_is_the_answer! %>
+                        </div>
+                    <% end %>
+                <div class="form-group">
+                    <%= f.submit class: "btn btn-success form-control" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
