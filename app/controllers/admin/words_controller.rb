@@ -18,6 +18,10 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def edit
+    @word = Word.find(params[:id])
+  end
+
   def word_params
     params.require(:word).permit(:content, choices_attributes: [ :id,  :content, :is_correct ] )
   end
