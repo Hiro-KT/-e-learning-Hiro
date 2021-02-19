@@ -1,0 +1,29 @@
+<div class="category-title">
+    <%= @category.title %>
+</div>
+
+<div class="btn-new">
+    <%= link_to "New Word" , new_admin_category_word_path(@category) , class: "btn  btn-info m-3" %>
+</div>
+
+<table class="mt-4">
+    <thead>
+        <tr>
+            <th>Word</th>
+            <th>Answer</th>
+            <th>Settings</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td><%= link_to "Edit" , class: "btn btn-info" %>
+             / <%= link_to "Delete" , method: :delete ,class: "btn btn-danger" %></td>
+        </tr>
+
+    </tbody>
+</table>
+
