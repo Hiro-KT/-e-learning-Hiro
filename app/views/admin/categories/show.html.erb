@@ -1,10 +1,12 @@
-<h1 class="text-center">Title(temporary)</h1>
+<div class="category-title">
+    <%= @category.title %>
+</div>
 
-    <div class="btn-new">
-        <%= link_to "New Word" , new_admin_category_word_path(:category_id) , class: "btn  btn-info m-3" %>
-    </div>
+<div class="btn-new">
+    <%= link_to "New Word" , new_admin_category_word_path(@category) , class: "btn  btn-info m-3" %>
+</div>
 
-    <table class="mt-4">
+<table class="mt-4">
     <thead>
         <tr>
             <th>Word</th>
