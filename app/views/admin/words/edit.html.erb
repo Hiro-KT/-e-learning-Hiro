@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-centent-around">
         <div class="col-6 m-auto">
-            <%= form_for [:admin, :category, @word] do |f| %>
+            <%= form_for [:admin, @category, @word] do |f| %>
                 <div class="form-group">
                         <%= f.label :word %><br>
                         <%= f.text_field :content , class: "form-control" %>
