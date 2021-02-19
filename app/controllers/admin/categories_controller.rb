@@ -35,7 +35,7 @@ class Admin::CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @words = Word.all
+    @words = @category.words
   end
 
 
