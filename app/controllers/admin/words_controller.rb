@@ -1,6 +1,5 @@
 class Admin::WordsController < ApplicationController
 
-
   def new
     @category = Category.find_by_id(params[:category_id])
     @word = Word.new
@@ -32,6 +31,15 @@ class Admin::WordsController < ApplicationController
     else
       render :edit
     end
+
+  end
+
+  def destroy
+    @category = Category.find(params[:category_id])
+    @word = Word.find(params[:id])
+    @word.destroy
+
+    redirect_to admin_category_url(@category)
 
   end
 

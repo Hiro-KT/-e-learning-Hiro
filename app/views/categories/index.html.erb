@@ -1,0 +1,16 @@
+<h1 class="m-3 mt-5">Categories</h1>
+
+<div class="text-right m-2">
+    <%= link_to "All" , "#" , class:"m-1" %>
+    <%= link_to "Learned" , "#" , class: "m-1" %>
+    <%= link_to "Not learned", "#" , class: "btn btn-info m-1" %>
+</div>
+<div class="container">
+    <div class="row justify-content-around">
+        <% @categories.each do |category| %>
+            <div class="card col-4 m-2">
+                <%= link_to "W" , class: "text-center m-3" %>
+            </div>
+        <% end %>
+    </div>
+</div>
