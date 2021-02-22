@@ -23,7 +23,7 @@
             <td><%= category.description %></td>
             <td><%= link_to "Edit" , edit_admin_category_path(category) , class: "btn btn-info" %>
              / <%= link_to "Delete" , admin_category_path(category) , method: :delete ,class: "btn btn-danger" %></td>
-            <td><%= link_to "Show", admin_category_path(category) %></td>
+            <td><%= link_to "Show", admin_category_path(category) ,class:"btn btn-primary" %></td>
         </tr>
         <% end %>
     </tbody>
