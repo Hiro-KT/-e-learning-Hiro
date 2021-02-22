@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'categories/index'
   root   "pages#home"
   resources :users
   resources :sessions
+  resources :categories
 
   namespace :admin do
     resources :categories do
