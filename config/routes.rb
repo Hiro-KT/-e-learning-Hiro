@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'categories/index'
   root   "pages#home"
   resources :users
   resources :sessions
