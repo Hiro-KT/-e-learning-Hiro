@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :categories
-  resources :answers
+
+  resources :lessons do
+    resources :answers
+  end
 
   namespace :admin do
     resources :categories do
