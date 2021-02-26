@@ -16,7 +16,7 @@
                 <% if category.get_lesson(current_user).nil? %>
                     <%= button_to "Learn" , lessons_path({category_id: category.id}) , class:" btn btn-info m-3 " %>
                 <% else %>
-                    <%= link_to "Show Result" ,lessons_path(category.get_lesson(current_user)) , class: "btn btn-info m-3" %>
+                    <%= link_to "Show Result" , lesson_path(category.get_lesson(current_user)) , class: "btn btn-info m-3" %>
                 <% end %>
                 </div>
         <% end %>
