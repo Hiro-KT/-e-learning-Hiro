@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :categories
+  resources :relationships, only: [:create, :destroy]
 
   resources :lessons do
     resources :answers
