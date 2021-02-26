@@ -6,6 +6,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new
 
     if @lesson.next_word.nil?
+      @lesson.update(result: @lesson.correct_answers)
       redirect_to lesson_url(@lesson)
     end
   end
