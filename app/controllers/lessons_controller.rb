@@ -7,8 +7,7 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @answer = current_user.lessons.find_by(params[:category_id])
-    @answers = @answer.words
+
   end
 
   def lesson_params
