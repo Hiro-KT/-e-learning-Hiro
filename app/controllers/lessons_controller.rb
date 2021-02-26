@@ -7,6 +7,7 @@ class LessonsController < ApplicationController
   end
 
   def show
+
   end
 
   def lesson_params
