@@ -1,6 +1,6 @@
-<h1 class="text-center m-3">Title</h1>
+<h1 class="text-center m-3"><%= @lesson.category.title %></h1>
 <div class="number">
-    Result: 2 of 3
+    Result: <%= @lesson.correct_answers %> of <%= @lesson.words.count %>
 </div>
 
 <table class="mt-4">
