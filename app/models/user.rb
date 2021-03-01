@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :lessons
   has_many :relationships
+  has_many :activities
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 }
 
@@ -8,7 +9,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   def follow(other_user)
-    Relationship.create(
+    @relationship = Relationship.create(
       follower_id: id,
       followed_id: other_user.id
     )

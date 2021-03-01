@@ -2,9 +2,11 @@ class RelationshipsController < ApplicationController
 
   def create
     other_user = User.find(params[:followed_id])
+   
     current_user.follow(other_user)
-
-    redirect_to user_url(other_user)    # Go back to the show page of other user
+    @relationship = Relationship.find_by(follower_id: current_user.id, followed_id: other_user.id)
+    @relationship.create_activity(user: current_user)
+    redirect_to user_url(other_user)
   end
 
   def destroy
