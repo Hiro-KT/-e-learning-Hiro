@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :lessons
   has_many :relationships
+  has_many :activities
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 }
 
