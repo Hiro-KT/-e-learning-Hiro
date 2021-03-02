@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-
   def home
     if logged_in?
       @activity = Activity.new
@@ -7,5 +6,4 @@ class PagesController < ApplicationController
       render 'users/home_feed'
     end
   end
-
 end

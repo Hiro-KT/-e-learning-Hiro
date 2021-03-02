@@ -41,7 +41,7 @@ class User < ApplicationRecord
   end
 
   def feed
-    ids = following.pluck                             #get all ID of FOLLOWED USERS
+    ids = following.pluck(:id)                             #get all ID of FOLLOWED USERS
     ids << id                                         #add current user ID to ID list
 
     Activity.where(user_id: ids)

@@ -20,11 +20,16 @@
             </div>
             <div class="card-body">
                 <% @activities.each do |activity| %>
-                    <% if activity.action_type == "Relationship" %>
-                        <%= User.find(activity.action.followed_id).name %>
-                    <% else %>
-                        learned <%= activity.action.result %> of <%= activity.action.category.words.count %> in <%= activity.action.category.title %>
+                    <% if activity.user == current_user %>
+                        You
+                    <% else%>
+                        <%= activity.user.name %>
                     <% end %>
+                    <% if activity.action_type == "Relationship" %>
+                        followed <%= User.find(activity.action.followed_id).name %><br>
+                    <% else %>
+                        learned <%= activity.action.result %> of <%= activity.action.category.words.count %> in <%= activity.action.category.title %><br>
+                    <% end%>
                 <% end %>
             </div>
         </div>

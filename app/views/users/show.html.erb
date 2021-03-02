@@ -9,11 +9,11 @@
                 </div>
                 <div class= "row">
                     <div class="col ml-2">
-                    <%= @user.following.count %>
+                        <%= @user.following.count %>
                         <p>following</p>
                     </div>
                     <div class="col">
-                    <%= @user.followers.count %>
+                        <%= @user.followers.count %>
                         <p>follower</p>
                     </div>
                 </div>
@@ -30,7 +30,20 @@
         </div>
 
         <div class="container mt-4 col-6">
-            <h2 class="text-center">Activities</h2>
+            <h2 class="text-center m-2">Activities</h2>
+            <% @activities.each do |activity| %>
+                <% if activity.user == current_user %>
+                    You
+                <% else%>
+                    <%= activity.user.name %>
+                <% end %>
+                <% if activity.action_type == "Relationship" %>
+                    followed <%= User.find(activity.action.followed_id).name %><br>
+                <% else %>
+                    learned <%= activity.action.result %> of <%= activity.action.category.words.count %> in <%= activity.action.category.title %><br>
+                <% end%>
+            <% end %>
+
         </div>
 
     </div>
