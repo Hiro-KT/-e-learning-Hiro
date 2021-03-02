@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: e-learning-Hiro_production
   username: e-learning-Hiro
   password: <%= ENV['E-LEARNING-HIRO_DATABASE_PASSWORD'] %>
