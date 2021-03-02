@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-5 m-4">
+        <div class="card">
+
+            <div class="card-body">
+                <%= image_tag gravatar_for(current_user), alt: current_user.name %>
+                <h2><%= current_user.name %></h2>
+                <%= current_user.email %>
+                <div>
+                    <%= link_to "Update Profile",edit_user_path(current_user),class:"btn btn-info mt-2" %>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                    <% @activities.each do |activity| %>
+                    <% if activity.action_type == "Relationship" %>
+                        <%= User.find(activity.action.followed_id).name %>
+                        (I wanna get the number of follower and followed. How do I do?)
+                    <% else %>
+                        <h3> <%= activity.action.result %> words learned</h3>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 m-4">
+        <div class="card">
+            <div class="card-header">
+                <p>Activities feed</p>
+            </div>
+            <div class="card-body">
+               <p>"Image" Name did something</p>
+            </div>
+            <div class="card-body">
+               <p>"Image" Name did something</p>
+            </div>
+        </div>
+    </div>
+
+</div>
