@@ -9,9 +9,11 @@
                 </div>
                 <div class= "row">
                     <div class="col ml-2">
+                        <%= @user.following.count %>
                         <p>following</p>
                     </div>
                     <div class="col">
+                        <%= @user.followers.count %>
                         <p>follower</p>
                     </div>
                 </div>
@@ -28,7 +30,20 @@
         </div>
 
         <div class="container mt-4 col-6">
-            <h2 class="text-center">Activities</h2>
+            <h2 class="text-center m-2">Activities</h2>
+            <% @activities.each do |activity| %>
+                <% if activity.user == current_user %>
+                    <span class="badge badge-danger">You</span>
+                <% else%>
+                    <span class="badge badge-info"><%= activity.user.name %></span>
+                <% end %>
+                <% if activity.action_type == "Relationship" %>
+                    followed <span class="badge badge-primary"><%= User.find(activity.action.followed_id).name %></span><br>
+                <% else %>
+                    learned <%= activity.action.result %> of <%= activity.action.category.words.count %> in <span class="badge badge-light"><%= activity.action.category.title %></span><br>
+                <% end%>
+            <% end %>
+
         </div>
 
     </div>

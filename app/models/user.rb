@@ -28,7 +28,23 @@ class User < ApplicationRecord
 
   def following
     ids = active_relationships.pluck(:followed_id)      #get all FOLLOWER ID
-    User.where(id: ids)                                 #get all FOLLOWER USERS wwhere ID id in ID LIST
+    User.where(id: ids)                                 #get all FOLLOWER USERS where ID id in ID LIST
+  end
+
+  def passive_relationships
+    Relationship.where(followed_id: id)
+  end
+
+  def followers
+    ids = passive_relationships.pluck(:follower_id)
+    User.where(id: ids)
+  end
+
+  def feed
+    ids = following.pluck(:id)                             #get all ID of FOLLOWED USERS
+    ids << id                                         #add current user ID to ID list
+
+    Activity.where(user_id: ids)
   end
 
 end
