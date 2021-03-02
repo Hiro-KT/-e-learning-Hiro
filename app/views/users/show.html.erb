@@ -9,9 +9,11 @@
                 </div>
                 <div class= "row">
                     <div class="col ml-2">
+                    <%= @user.following.count %>
                         <p>following</p>
                     </div>
                     <div class="col">
+                    <%= @user.followers.count %>
                         <p>follower</p>
                     </div>
                 </div>
